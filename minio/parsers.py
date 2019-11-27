@@ -442,3 +442,17 @@ def parse_multi_object_delete_response(data):
                          errtag.get_child_text('Message'))
         for errtag in root.findall('Error')
     ]
+
+def parse_bucket_accelerate_configuration_get_response(data):
+    """Parser for Bucket Accelerate Configuration Get API response.
+
+    :param data: XML response body content from service.
+
+    :return: The accelerate configuration of the bucket.
+
+    """
+    root = S3Element.fromstring('AccelerateConfiguration', data)
+    acc_status = root.find('Status')
+    if acc_status is None:
+        return None
+    return acc_status.text()
