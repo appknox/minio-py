@@ -57,7 +57,7 @@ tests_requires = [
 ]
 
 setup(
-    name='minio',
+    name='ak-minio',
     description='MinIO Python Library for Amazon S3 Compatible Cloud Storage for Python',
     author='MinIO, Inc.',
     url='https://github.com/minio/minio-py',
